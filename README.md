@@ -22,18 +22,18 @@ The goal is to uncover trends in species diversity, observation patterns, enviro
 ## Steps Involved
 
 ### 1. Data Preprocessing
--Cleaned and standardized raw bird observation data using Pandas.
+-*Cleaned and standardized raw bird observation data using Pandas.
 
--Converted time-related fields (Start_Time, End_Time) to datetime.time.
+-*Converted time-related fields (Start_Time, End_Time) to datetime.time.
 
 -Ensured data types for columns like Date, Temperature, Humidity, Sex, etc., were consistent.
 
 -Handled missing values, (e.g., ID_Method, Distance, Sex).
 
 ### 2. PostgreSQL Table Creation & Data Insertion
--Established a connection to PostgreSQL using psycopg2.
--Created two main tables: grassland and forest, each with properly defined column types (TEXT, INTEGER, BOOLEAN, etc.).
--Inserted the cleaned DataFrames into these tables using Pandas with SQLAlchemy and bulk insert queries.
+  -Established a connection to PostgreSQL using psycopg2.
+  -Created two main tables: grassland and forest, each with properly defined column types (TEXT, INTEGER, BOOLEAN, etc.).
+  -Inserted the cleaned DataFrames into these tables using Pandas with SQLAlchemy and bulk insert queries.
 
 ### 3. SQL-Based Analysis
 Wrote optimized SQL queries for insights like:
