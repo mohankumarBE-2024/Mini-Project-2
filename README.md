@@ -23,8 +23,11 @@ The goal is to uncover trends in species diversity, observation patterns, enviro
 
 ### 1. Data Preprocessing
 -Cleaned and standardized raw bird observation data using Pandas.
+
 -Converted time-related fields (Start_Time, End_Time) to datetime.time.
+
 -Ensured data types for columns like Date, Temperature, Humidity, Sex, etc., were consistent.
+
 -Handled missing values, (e.g., ID_Method, Distance, Sex).
 
 ### 2. PostgreSQL Table Creation & Data Insertion
