@@ -22,28 +22,36 @@ The goal is to uncover trends in species diversity, observation patterns, enviro
 ## Steps Involved
 
 ### 1. Data Preprocessing
--*Cleaned and standardized raw bird observation data using Pandas.
-
--*Converted time-related fields (Start_Time, End_Time) to datetime.time.
-
--Ensured data types for columns like Date, Temperature, Humidity, Sex, etc., were consistent.
-
--Handled missing values, (e.g., ID_Method, Distance, Sex).
+- Cleaned and standardized raw bird observation data using Pandas.
+- Converted time-related fields (`Start_Time`, `End_Time`) to `datetime.time`.
+- Ensured data types for columns like `Date`, `Temperature`, `Humidity`, `Sex`, etc., were consistent.
+- Handled missing values:
+  - `ID_Method`
+  - `Distance`
+  - `Sex`
 
 ### 2. PostgreSQL Table Creation & Data Insertion
-  -Established a connection to PostgreSQL using psycopg2.
-  -Created two main tables: grassland and forest, each with properly defined column types (TEXT, INTEGER, BOOLEAN, etc.).
-  -Inserted the cleaned DataFrames into these tables using Pandas with SQLAlchemy and bulk insert queries.
+- Established a connection to PostgreSQL using `psycopg2`.
+- Created two main tables: `grassland` and `forest`, each with well-defined column types (`TEXT`, `INTEGER`, `BOOLEAN`, etc.).
+- Inserted the cleaned DataFrames into the database using `pandas.to_sql()` or `executemany()` with SQLAlchemy engine.
 
 ### 3. SQL-Based Analysis
-Wrote optimized SQL queries for insights like:
--Seasonal and yearly observation patterns
--Sex ratio, distance analysis, observer-wise trends
--Species affected by environmental variables like temperature, humidity, and wind
--Identification of conservation-priority species using PIF Watchlist and Stewardship flags
+- Wrote optimized SQL queries for:
+  - Seasonal and yearly observation trends
+  - Sex ratio and species diversity across locations
+  - Observer behavior and visit patterns
+  - Environmental factors (Temperature, Humidity, Sky, Wind) affecting bird activity
+  - Species with conservation priority using `PIF_Watchlist_Status` and `Regional_Stewardship_Status`
 
 ### 4. Streamlit Dashboard Development
--Built an interactive web dashboard using Streamlit.
--Sidebar navigation allows users to select specific analysis themes.
--Each section executes SQL queries dynamically, loads the data into Pandas, and visualizes results using Matplotlib and Seaborn.
--Used intuitive charts (barplots, line plots, heatmaps, horizontal bar charts) for maximum clarity.
+- Built an interactive web dashboard using Streamlit.
+- Added sidebar navigation for selecting different analytical views.
+- Each selection:
+  - Runs SQL queries using SQLAlchemy
+  - Loads data into Pandas
+  - Generates visualizations using Seaborn/Matplotlib
+- Visual formats used:
+  - Bar charts (vertical & horizontal)
+  - Line plots
+  - Count plots
+  - Heatmaps for weather correlations
