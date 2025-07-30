@@ -1,5 +1,4 @@
-# Mini-Project-2
-Bird Species Observation Analysis
+# Mini-Project-2: Bird Species Observation Analysis
 # Overview
 This project focuses on analyzing bird observation data collected from two different habitats: Grassland and Forest. The data is stored in a PostgreSQL database, and insights are extracted using SQL queries and visualized using Streamlit, Pandas, Matplotlib, and Seaborn.
 
